@@ -1,0 +1,25 @@
+{
+    "name": "oc-lang",
+    "displayName": "oc-lang",
+    "description": "OpenClonk Language Ext",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ocs",
+            "aliases": ["OCScript", "ocs"],
+            "extensions": [".c"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ocs",
+            "scopeName": "source.oc",
+            "path": "./syntaxes/ocs.tmLanguage.json"
+        }]
+    }
+}

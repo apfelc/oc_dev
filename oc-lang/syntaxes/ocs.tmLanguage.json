@@ -1,0 +1,72 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "OCScript",
+	"patterns": [
+		{ "include": "#linecomment"},
+		{ "include": "#blockcomment"},
+		{ "include": "#strings"},
+		{ "include": "#module"},
+		{ "include": "#declarations"},
+		{ "include": "#types"},
+		{ "include": "#constants"},
+		{ "include": "#numbers"},
+		{ "include": "#keywords"},
+		{ "include": "#functions"}
+	],
+	"repository": {
+		"numbers": {
+			"name": "constant.numeric",
+			"match": "[0-9]+"
+		},
+		"declarations": {
+			"name": "variable",
+			"match": "(var|const|static|local)"
+		},
+		"types": {
+			"name": "entity.name.type",
+			"match": "(int|proplist|object|string|array|bool|any|dev|effect)"
+		},
+		"constants": {
+			"name": "constant.language",
+			"match": "(true|false|nil)"
+		},
+		"functions": {
+			"name": "constant.language",
+			"match": "(public|global|protected|private|func)"
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.ocs",
+					"match": "\\b(break|continue|for|while|return|else|if|in|this|new)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.ocs",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ocs",
+					"match": "\\\\."
+				}
+			]
+		},
+		"blockcomment": {
+			"name": "comment.block",
+			"begin": "/\\*",
+			"end": "\\*/"
+		},
+		"linecomment": {
+			"name": "comment.line.double-dash",
+			"begin": "//",
+			"end": "$"
+		},
+		"module": {
+			"name": "keyword.control",
+			"match": "(#appendto|#include)"
+		}
+	},
+	"scopeName": "source.oc"
+}

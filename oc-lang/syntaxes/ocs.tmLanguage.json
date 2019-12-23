@@ -19,7 +19,7 @@
 			"match": "[0-9]+"
 		},
 		"declarations": {
-			"name": "variable",
+			"name": "entity.name.type",
 			"match": "(var|const|static|local)"
 		},
 		"types": {
